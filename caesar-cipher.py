@@ -4,7 +4,6 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz'; # Elementos do alfabeto
 
 # Algoritmo de Ceasar
 def caesar(data, key, mode): 
-
     new_data = '';
     
     for c in data: # Vai percorrer todos os caracteres da String passada como argumento
