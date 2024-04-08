@@ -6,14 +6,14 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz'; # Elementos do alfabeto
 def caesar(data, key, mode): 
     new_data = '';
     
-    for c in data: # Vai percorrer todos os caracteres da String passada como argumento
-        index = alphabet.find(c); # E retornar a posição de cada caractere para a variável index
+    for c in data: # Percorre todos os caracteres da String passada como argumento
+        index = alphabet.find(c); # Retorna a posição de cada caractere para a variável 'index'
         
         if index == -1:
             new_data += c;
         else:
             if (mode == MODE_ENCRYPT):
-                new_index = index + key # Critgrafando a mensagem
+                new_index = index + key # Criptografando
             else:
                 new_index = index - key; # Descriptografando
                 
@@ -30,21 +30,21 @@ def hackingCaesar(ciphered_text):
         decriptedMessage = caesar(ciphered, i, 0) # Iremos chamar a função "caesar" com todos os valores de chave possíveis (1 a 26)
         
         if(decriptedMessage == original): # E, caso a String retornada seja igual a original, retorna o valor da chave e a mensagem descriptografada
-            print(f'\nA mensagem foi descriptografada com a chave no valor {i}\nChave descriptografada: {decriptedMessage}')
+            print(f'\nA mensagem foi descriptografada com a chave no valor {i}\nMensagem descriptografada: {decriptedMessage}')
             
-            break
+            return decriptedMessage;
         else:
             print(f'Tentativa com a chave {i}: {decriptedMessage}')
 
 # Testando o algoritmo
 key = 10
 
-original = 'a ligeira raposa marrom saltou sobre o cachorro cansado' # Mensagme original
-print('Original:', original)
+original = 'a ligeira raposa marrom saltou sobre o cachorro cansado' # Mensagem original
+print(f'Original: {original}')
 ciphered = caesar(original, key, MODE_ENCRYPT) # Mensagem criptografada
-print('Encriptada:', ciphered)
+print(f'Encriptada: {ciphered}')
 plain = caesar(ciphered, key, MODE_DECRYPT) # Mensagem descriptografada
-print('Decriptada:', plain, '\n')
+print(f'Decriptada:{plain}\n')
 
 """ original = 'alo'
 print('Original:', original) # alo
