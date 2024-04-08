@@ -30,7 +30,7 @@ def vigenere(data, key, mode):
             
             if mode == MODE_ENCRYPT:
                 encrypted_index = (char_index + key_index) % len(alphabet)
-                result += alphabet[encrypted_index]
+                result += alphabet[encrypted_index].upper()
             elif mode == MODE_DECRYPT:
                 decrypted_index = (char_index - key_index) % len(alphabet)
                 result += alphabet[decrypted_index]
