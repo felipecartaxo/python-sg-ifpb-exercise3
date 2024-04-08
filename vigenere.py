@@ -30,12 +30,13 @@ def vigenere(data, key, mode):
             
             if mode == MODE_ENCRYPT:
                 encrypted_index = (char_index + key_index) % len(alphabet)
-                result += alphabet[encrypted_index].upper()
+                result += alphabet[encrypted_index].upper() # Retorna a mensagem criptografada em letra maiúscula
             elif mode == MODE_DECRYPT:
                 decrypted_index = (char_index - key_index) % len(alphabet)
                 result += alphabet[decrypted_index]
                 
             j += 1
+            
         else:
             # Se não for uma letra, apenas adicionamos o caractere à mensagem cifrada
             result += data[i]
@@ -44,6 +45,7 @@ def vigenere(data, key, mode):
 
 # Tests
 key = 'ch4ve'
+
 original = 'a ligeira raposa marrom saltou sobre o cachorro cansado'
 print('Original:', original)
 ciphered = vigenere(original, key, MODE_ENCRYPT)
